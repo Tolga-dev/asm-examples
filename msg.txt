@@ -1,0 +1,8 @@
+g++ -g -O3 -std=c++14 -c foo.cpp -o test.o && objdump -dS test.o
+
+  gcc -O2 -S -c foo.c
+will leave the generated assembly code on the file foo.s.
+
+If you want to see the C code together with the assembly it was converted to, use a command line like this:
+
+ gcc -c -g -Wa,-a,-ad [other GCC options] foo.c > foo.lst
